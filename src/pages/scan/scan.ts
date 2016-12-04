@@ -12,8 +12,9 @@ import { bookService } from "../../app/bookService";
 export class ScanPage {
 
   barcodeData: BarcodeData;
-  bookData: any[];
+  bookData;
   errorMessage: string;
+  i: number;
 
   constructor(private nav: NavController, navParams: NavParams, private bookService: bookService) {
     this.barcodeData = navParams.get('details');

@@ -9,7 +9,7 @@ import {Injectable} from "@angular/core";
 export class bookService {
 
   private isbn;
-  private bookUrl = "https://www.googleapis.com/books/v1/volumes?q=";
+  private bookUrl = "https://www.googleapis.com/books/v1/volumes?q=isbn:";
 
   constructor(private http: Http){
 
@@ -26,7 +26,7 @@ export class bookService {
 
   private extractData(res: Response) {
     let body = res.json();
-    return body.data || { };
+    return body || { };
   }
 
   private handleError (error: Response | any) {
